@@ -24,6 +24,8 @@ cv2
 ### 测试模型
 从[这里](https://drive.google.com/drive/folders/1yDAmYAZjTHsBCiRrkRsTVnpLhkGTjdhn?usp=sharing)下载训练好的模型参数，并放入```ckpt```文件夹，
 
+需要根据情将```train_config.py```中的```--ckpt```设置改为模型参数存放的路径。
+
 之后运行
 ```
 python test.py
