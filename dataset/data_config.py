@@ -36,11 +36,11 @@ class LivDet2023_test_Config(object):
         if img_type=='norm':
             self.root_path = None
         elif img_type=='roi':
-            self.root_path = r'/rdata/xianyun.sun/iris_pad/LivDet2023_test_roi/images/'
+            self.root_path = r'/path/to/your/LivDet2023_test_roi/images/'
         elif img_type=='raw':
-            self.root_path = r'/rdata/xianyun.sun/iris_pad/LivDet2023_test/imagse/'
+            self.root_path = r'/path/to/your/LivDet2023_test/images/'
 
-        self.metadata = r'/rdata/xianyun.sun/iris_pad/LivDet2023_test/livdet_by_pai.csv'
+        self.metadata = r'/path/to/your/LivDet2023_test/livdet_by_pai.csv'
         self.data_name = 'LivDet2023_test'
 
     def read_data(self, SLA=False, equal=False):
