@@ -16,9 +16,9 @@ def cls_args():
     # model
     parser.add_argument('--input_size', type=tuple, default=(384, 384))
     parser.add_argument('--pad_class', type=int, default=2)
-    parser.add_argument('--pretrained_ckpt', type=str, default="/sdata/xianyun.sun/timm/efficientnet_b0.ra_in1k/pytorch_model.bin")
-    #parser.add_argument('--pretrained_ckpt', type=str, default=None)
-    parser.add_argument('--ckpt', type=str, default='/sdata/xianyun.sun/iris/MADiris_pub/ckpt/effb0_dctmini384_spch2_sigmoid_sgd_lr1e-4_tri/epoch14-acc_0.6586.pth')
+    #parser.add_argument('--pretrained_ckpt', type=str, default="/timm/efficientnet_b0.ra_in1k/pytorch_model.bin")
+    parser.add_argument('--pretrained_ckpt', type=str, default=None)
+    parser.add_argument('--ckpt', type=str, default='./ckpt/effb0_dctmini384_spch2_sigmoid_sgd_lr1e-4_tri/epoch14-acc_0.6586.pth')
     #parser.add_argument('--ckpt', type=str, default=None)
 
     # loss
