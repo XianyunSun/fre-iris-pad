@@ -7,7 +7,6 @@ def cls_args():
     # dataset
     parser.add_argument('--domain_sampler', action='store_true') # equally sample images from each training domain
     parser.add_argument('--pad_sampler', action='store_true') # equally sampler live and attack images in each domain
-    parser.add_argument('--SLA', action='store_true') # if True, consider transparent samples as attack
 
     # augmentation
     parser.add_argument('--data_type', type=str, default='raw', choices=['norm', 'roi', 'raw'])
