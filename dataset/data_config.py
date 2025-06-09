@@ -9,7 +9,6 @@ import pdb
 pad_label=0 for attack samples, 
 pad_label=1 for live samples
 phase: 'train', 'val' or 'all'
-SLA=True if consider soft lenses as attack samples
 '''
 
 def get_equal_data(image_list, label_list):
@@ -43,7 +42,7 @@ class LivDet2023_test_Config(object):
         self.metadata = r'/path/to/your/LivDet2023_test/livdet_by_pai.csv'
         self.data_name = 'LivDet2023_test'
 
-    def read_data(self, SLA=False, equal=False):
+    def read_data(self, equal=False):
         df = pd.read_csv(self.metadata)
         image_list = [os.path.join(self.root_path, df['filename'][i]) for i in range(len(df['filename']))]
         label_list = [1 if l=='Live'else 0 for l in df['ground_truth']]
@@ -51,7 +50,6 @@ class LivDet2023_test_Config(object):
         if equal:
             image_list, label_list = get_equal_data(image_list, label_list)
         
-        print('SLA setting not available')
         print('dataset: %s, # live samples: %d, # attack samples: %d.' 
                 % (self.data_name, label_list.count(1), label_list.count(0)))
         
