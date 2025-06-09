@@ -22,7 +22,7 @@ cv2
 需要根据情况修改```dataset/data_config.py```中的相关路径
 
 ### 训练
-运行
+将```train_config.py```中的```--pretrained_ckpt```路径设为骨干网络在ImageNet上的预训练参数路径，```--ckpt```设为```None```，运行
 ```
 python train_simple.py
 ```
