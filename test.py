@@ -41,7 +41,7 @@ def main(test_list, args, save_path, save_name, save_csv=False, save_roc=False, 
 
     # build dataset
     test_data_name = [d.get_name() for d in test_list]
-    test_dataset = BasicDataset(test_list, img_size=args.input_size, aug=args.augmentation, SLA=args.SLA, train=False)
+    test_dataset = BasicDataset(test_list, img_size=args.input_size, aug=args.augmentation, train=False)
     test_dataloader = DataLoader(test_dataset, batch_size=args.test_batch_size, shuffle=False, drop_last=False,
                                 num_workers=args.num_workers, pin_memory=False)
     test_image_list = test_dataset.image_list
