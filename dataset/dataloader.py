@@ -84,7 +84,7 @@ class UniformSampler(torch.utils.data.Sampler):
         return len(self.data_source)
 
 class BasicDataset(Dataset):
-    def __init__(self, config_list, img_size=(224,224), equal=False, aug=[], SLA=False, train=False, split=-1., indexs=None):
+    def __init__(self, config_list, img_size=(224,224), equal=False, aug=[], train=False, split=-1., indexs=None):
         super(BasicDataset, self).__init__()
         self.image_list = []
         self.label_list = []
@@ -93,7 +93,7 @@ class BasicDataset(Dataset):
         self.aug = aug
 
         for i, domain in enumerate(config_list):
-            image_list, label_list = domain.read_data(equal=equal, SLA=SLA)
+            image_list, label_list = domain.read_data(equal=equal)
             self.image_list += image_list
             self.label_list += label_list
             self.domain_label_list += [i for j in range(len(image_list))]
