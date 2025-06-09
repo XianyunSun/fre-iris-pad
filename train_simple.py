@@ -121,14 +121,14 @@ def main(data_list, test_list, args):
     train_data_name = [d.get_name() for d in data_list]
 
     if test_list is None:
-        train_dataset = BasicDataset(data_list, img_size=args.input_size, aug=args.augmentation, SLA=args.SLA, train=True, split=0.2)
+        train_dataset = BasicDataset(data_list, img_size=args.input_size, aug=args.augmentation, train=True, split=0.2)
         test_data_name = ['intra']
-        test_dataset = BasicDataset(data_list, img_size=args.input_size, aug=args.augmentation, SLA=args.SLA, train=False, 
+        test_dataset = BasicDataset(data_list, img_size=args.input_size, aug=args.augmentation, train=False, 
                                     indexs=train_dataset.test_index)
     else:
-        train_dataset = BasicDataset(data_list, img_size=args.input_size, aug=args.augmentation, SLA=args.SLA, train=True)
+        train_dataset = BasicDataset(data_list, img_size=args.input_size, aug=args.augmentation, train=True)
         test_data_name = [d.get_name() for d in test_list]
-        test_dataset = BasicDataset(test_list, img_size=args.input_size, aug=args.augmentation, SLA=args.SLA)
+        test_dataset = BasicDataset(test_list, img_size=args.input_size, aug=args.augmentation)
 
     if args.pad_sampler:
         train_dataloader = DataLoader(train_dataset, batch_size=args.train_batch_size, 
