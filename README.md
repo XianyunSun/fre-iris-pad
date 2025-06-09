@@ -19,10 +19,14 @@ cv2
 ### 数据集
 使用LivDet-Iris 2023比赛数据集作为测试集，该数据集可在[比赛官网](https://livdetiris23.github.io/)上申请
 
-需要根据情况修改```dataset/data_config.py```中的相关路径
+需要根据情况修改```dataset/data_config.py```中的相关路径。
 
 ### 训练
-将```train_config.py```中的```--pretrained_ckpt```路径设为骨干网络在ImageNet上的预训练参数路径，```--ckpt```设为```None```，运行
+将```train_config.py```中的```--pretrained_ckpt```路径设为骨干网络在ImageNet上的预训练参数路径，```--ckpt```设为```None```，
+
+其他超参数可以在```--train_config.py```中修改
+
+运行
 ```
 python train_simple.py
 ```
